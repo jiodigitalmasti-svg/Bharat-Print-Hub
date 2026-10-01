@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="hi" data-theme="blue">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharat Print Hub — Online Printing & Cyber Cafe Digital Services</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Contact Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-info">
+                <span>📞 WhatsApp Support: +91 98765 43210</span>
+                <span>⏱️ Fast 24-Hour Digital Dispatch</span>
+            </div>
+            <div class="top-badge">
+                <span>⚡ Cyber Cafe & Student Special Portal</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-text">
+                    <span class="brand-name">BHARAT<span class="highlight">PRINT HUB</span></span>
+                    <span class="brand-tag">Online Printing & Services</span>
+                </div>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="#services">Services</a>
+                <a href="#aadhaarTool">Aadhaar PVC Tool</a>
+                <a href="#panTool">PAN Resizer</a>
+                <a href="#calculator">Price Calculator</a>
+                <a href="#contact" class="btn btn-primary btn-sm">Instant Order</a>
+            </nav>
+
+            <button class="mobile-toggle" id="menuToggle" aria-label="Toggle Menu">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="section hero-section">
+        <div class="container" style="text-align: center;">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <span class="badge" style="background: var(--accent-soft); color: var(--primary); padding: 6px 16px; border-radius: 20px; font-weight: 700; font-size: 14px;">🇮🇳 India's #1 Digital Cyber Cafe Portal</span>
+                <h1 style="font-size: clamp(32px, 7vw, 56px); color: var(--primary); margin: 20px 0; font-weight: 800; line-height: 1.2;">
+                    Instant Document Printing & <span style="color: var(--accent);">Aadhaar/PAN Services</span>
+                </h1>
+                <p style="font-size: clamp(16px, 3vw, 19px); color: var(--text-muted); margin-bottom: 30px;">
+                    Upload documents, resize photos for government portals, print high-quality PVC Aadhaar cards, and get doorstep delivery or instant PDF copy.
+                </p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#aadhaarTool" class="btn btn-primary btn-lg">🪪 Aadhaar PVC Tool</a>
+                    <a href="#calculator" class="btn btn-secondary btn-lg">🖨️ Calculate Print Cost</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Popular Digital Services</h2>
+                <p>Designed for students, job aspirants, and local cyber cafe owners.</p>
+            </div>
+            <div class="services-grid">
+                <div class="card service-card">
+                    <div class="service-icon">🪪</div>
+                    <h3>Aadhaar PVC Styling</h3>
+                    <p>Crop, adjust brightness, format alignment & generate ready-to-print PDF layout in 300 DPI.</p>
+                    <a href="#aadhaarTool" class="btn btn-outline btn-sm">Use Tool &rarr;</a>
+                </div>
+                <div class="card service-card">
+                    <div class="service-icon">📷</div>
+                    <h3>PAN Photo & Sign Resizer</h3>
+                    <p>Auto-crop photos to 213x213px and signatures to 444x205px instantly for NSDL/UTIITSL portals.</p>
+                    <a href="#panTool" class="btn btn-outline btn-sm">Use Tool &rarr;</a>
+                </div>
+                <div class="card service-card">
+                    <div class="service-icon">🖨️</div>
+                    <h3>Online Document Print</h3>
+                    <p>Upload PDF, Word or Image files. Choose color/BW, page count and bind options with delivery.</p>
+                    <a href="#calculator" class="btn btn-outline btn-sm">Calculate &rarr;</a>
+                </div>
+                <div class="card service-card">
+                    <div class="service-icon">🛂</div>
+                    <h3>Passport Photo Grid</h3>
+                    <p>Make 8 or 16 passport size photos on a 4x6 sheet instantly with border and cut marks.</p>
+                    <a href="#services" class="btn btn-outline btn-sm">Coming Soon &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aadhaar PVC Tool Section -->
+    <section id="aadhaarTool" class="section" style="background: var(--bg-alt);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Aadhaar PVC Card Generator Tool</h2>
+                <p>Upload front Aadhaar image or PDF scan, adjust settings & download clean layout.</p>
+            </div>
+
+            <div class="tool-container">
+                <div class="tool-controls card">
+                    <h3>1. Upload Aadhaar Scan</h3>
+                    <div class="form-group">
+                        <label for="aadhaarFile">Select Front Image / PDF</label>
+                        <input type="file" id="aadhaarFile" accept="image/*" onchange="handleAadhaarUpload(event)">
+                    </div>
+
+                    <h3 style="margin-top: 20px;">2. Fine-tune Adjustments</h3>
+                    <div class="form-group">
+                        <label for="brightness">Brightness & Clarity</label>
+                        <input type="range" id="brightness" min="80" max="150" value="105" oninput="adjustAadhaarFilter()">
+                    </div>
+
+                    <div style="display: flex; gap: 10px; margin-top: 20px;">
+                        <button class="btn btn-primary" onclick="downloadAadhaarPrint()" style="flex: 1;">📥 Download PDF (300 DPI)</button>
+                        <button class="btn btn-secondary" onclick="resetAadhaarTool()">🔄 Reset</button>
+                    </div>
+                </div>
+
+                <div class="tool-preview card">
+                    <h3>Live PVC Preview (CR80 Standard)</h3>
+                    <div class="pvc-card-preview" id="pvcFront">
+                        <div class="pvc-header">
+                            <span class="pvc-title">भारत सरकार / Government of India</span>
+                            <span class="pvc-uid">मेरा आधार, मेरी पहचान</span>
+                        </div>
+                        <div class="pvc-body">
+                            <div class="pvc-photo-box" id="pvcPhoto">👤</div>
+                            <div class="pvc-details">
+                                <p id="prevName">नाम: RAHUL KUMAR</p>
+                                <p>जन्म तिथि / DOB: 15/08/1998</p>
+                                <p>लिंग / Gender: पुरुष / Male</p>
+                                <p class="aadhaar-number">1234 5678 9012</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAN Card Resizer Section -->
+    <section id="panTool" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>PAN Card Photo & Signature Resizer</h2>
+                <p>Exact pixel dimensions and file size compression as required by NSDL & UTIITSL portals.</p>
+            </div>
+
+            <div class="resizer-grid">
+                <div class="card">
+                    <h3>Photo Resizer (213 x 213 px)</h3>
+                    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">Max size 50 KB, 300 DPI JPEG format.</p>
+                    <input type="file" id="panPhotoInput" accept="image/*" onchange="handlePanPhotoUpload(event)" style="margin-bottom: 12px;">
+                    <div class="thumb-preview" id="photoThumb">213 x 213 Photo Box</div>
+                    <button class="btn btn-primary" onclick="downloadResized('photo')" style="width: 100%; margin-top: 12px;">Download Cropped Photo</button>
+                </div>
+
+                <div class="card">
+                    <h3>Signature Resizer (444 x 205 px)</h3>
+                    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">Max size 50 KB, Grayscale enhanced.</p>
+                    <input type="file" id="panSignInput" accept="image/*" onchange="handlePanSignUpload(event)" style="margin-bottom: 12px;">
+                    <div class="thumb-preview" id="signThumb">444 x 205 Signature Box</div>
+                    <button class="btn btn-primary" onclick="downloadResized('signature')" style="width: 100%; margin-top: 12px;">Download Cropped Signature</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Calculator Section -->
+    <section id="calculator" class="section" style="background: var(--bg-alt);">
+        <div class="container" style="max-width: 800px;">
+            <div class="section-title">
+                <h2>Cyber Cafe & Print Price Calculator</h2>
+                <p>Estimate your printing charges instantly before placing order.</p>
+            </div>
+
+            <div class="card">
+                <div class="form-group">
+                    <label>Document Type / Service</label>
+                    <select id="docType">
+                        <option value="bw">B/W Printout (A4) - ₹2 / page</option>
+                        <option value="color">Color Printout (A4) - ₹10 / page</option>
+                        <option value="glossy">Glossy Photo Print (4x6) - ₹20 / copy</option>
+                        <option value="pvc">PVC Aadhaar / ID Card - ₹50 / card</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Number of Copies / Pages</label>
+                    <input type="number" id="printCopies" min="1" value="10">
+                </div>
+
+                <div class="form-group">
+                    <label>Binding Option</label>
+                    <select id="bindOption">
+                        <option value="none">No Binding (Loose)</option>
+                        <option value="spiral">Spiral Binding (+₹30)</option>
+                        <option value="hard">Hard Binding (+₹100)</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-primary" style="width: 100%; margin-top: 10px;" onclick="handleQuickSubmit(event)">🚀 Place Order via WhatsApp</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--primary); color: white; padding: 40px 0; text-align: center;" id="contact">
+        <div class="container">
+            <h3 style="margin-bottom: 10px; color: white;">Bharat Print Hub</h3>
+            <p style="opacity: 0.8; margin-bottom: 20px;">Your trusted digital partner for quick printing and online applications.</p>
+            <p style="font-size: 14px; opacity: 0.7;">© 2025 Bharat Print Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
