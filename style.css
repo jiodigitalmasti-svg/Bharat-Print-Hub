@@ -1,0 +1,561 @@
+/* Bharat Print Hub - Professional Blue and White Theme Styles */
+
+:root {
+  --primary: #0f52ba; /* Sapphire Blue */
+  --primary-hover: #0a3d8c;
+  --primary-light: #e6effc;
+  --accent: #f59e0b; /* Amber Gold for secondary highlights */
+  --accent-hover: #d97706;
+  --accent-soft: #fef3c7;
+  --bg-main: #ffffff;
+  --bg-alt: #f4f7fc;
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
+  --text-light: #ffffff;
+  --border-color: #cbd5e1;
+  --border-light: #e2e8f0;
+  
+  --shadow-sm: 0 1px 3px rgba(15, 82, 186, 0.08);
+  --shadow-md: 0 4px 12px rgba(15, 82, 186, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 25px -5px rgba(15, 82, 186, 0.12), 0 8px 10px -6px rgba(15, 82, 186, 0.08);
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  
+  --font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 44px;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--text-light);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.btn-secondary:hover {
+  background-color: #d1e2f9;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-light);
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 14px;
+  min-height: 36px;
+}
+
+.btn-lg {
+  padding: 16px 32px;
+  font-size: 18px;
+  min-height: 52px;
+}
+
+/* Layout Sections */
+.section {
+  padding: clamp(40px, 8vw, 80px) 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title h2 {
+  font-size: clamp(24px, 5vw, 36px);
+  color: var(--primary);
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+
+.section-title p {
+  font-size: 18px;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Top Bar Styling */
+.top-bar {
+  background-color: var(--primary);
+  color: var(--text-light);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.top-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.top-info {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.top-badge span {
+  background-color: var(--accent);
+  color: var(--text-dark);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 11px;
+}
+
+/* Navigation Header */
+.header {
+  background-color: var(--bg-main);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+.brand-name .highlight {
+  color: var(--accent);
+}
+
+.brand-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-menu a:not(.btn) {
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 15px;
+}
+
+.nav-menu a:not(.btn):hover {
+  color: var(--primary);
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--primary);
+  padding: 8px;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #edf4fe 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.service-icon {
+  font-size: 32px;
+  background-color: var(--primary-light);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  color: var(--primary);
+}
+
+.service-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.service-card p {
+  color: var(--text-muted);
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+/* Tools Layout Grid */
+.tool-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .tool-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--bg-alt);
+  border: 1.5px dashed var(--border-color);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.form-group select,
+.form-group input[type="number"],
+.form-group input[type="text"] {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-main);
+  font-family: var(--font-family);
+  font-size: 15px;
+  color: var(--text-dark);
+  outline: none;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(15, 82, 186, 0.15);
+}
+
+/* Aadhaar LIVE Preview styling */
+.pvc-card-preview {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1.586 / 1; /* Standard ID-1 Credit Card ratio */
+  background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: var(--shadow-md);
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border-top: 5px solid var(--primary);
+}
+
+.pvc-header {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(15, 82, 186, 0.2);
+  padding-bottom: 4px;
+  margin-bottom: 6px;
+}
+
+.pvc-title {
+  font-size: 11px;
+  font-weight: 800;
+  color: #c2410c; /* Saffron touch for GoI */
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.pvc-uid {
+  font-size: 8px;
+  font-weight: 600;
+  color: #047857; /* Green touch */
+  text-align: center;
+}
+
+.pvc-body {
+  display: flex;
+  gap: 12px;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.pvc-photo-box {
+  width: 72px;
+  height: 88px;
+  background-color: #f1f5f9;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  overflow: hidden;
+}
+
+.pvc-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 9px;
+  color: var(--text-dark);
+}
+
+.pvc-details p {
+  margin: 0;
+  font-weight: 500;
+}
+
+.pvc-details p strong {
+  font-weight: 700;
+}
+
+.aadhaar-number {
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  letter-spacing: 1px;
+  color: var(--primary) !important;
+  margin-top: 6px !important;
+}
+
+/* PAN Resizer Styles */
+.resizer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .resizer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.thumb-preview {
+  width: 100%;
+  height: 180px;
+  background-color: var(--bg-alt);
+  border: 2px dashed var(--border-color);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 14px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .header-content {
+    position: relative;
+  }
+  
+  .mobile-toggle {
+    display: block;
+  }
+  
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-main);
+    border-bottom: 2px solid var(--primary);
+    padding: 20px;
+    box-shadow: var(--shadow-lg);
+    gap: 16px;
+    align-items: stretch;
+  }
+  
+  .nav-menu.show {
+    display: flex;
+  }
+  
+  .nav-menu a {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+  
+  .nav-menu .btn {
+    border-bottom: none;
+    text-align: center;
+  }
+}
+
+/* Decorative Badges & Labels */
+.badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+/* Accent Filters */
+input[type="range"] {
+  width: 100%;
+  height: 6px;
+  background: var(--border-color);
+  border-radius: 5px;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
