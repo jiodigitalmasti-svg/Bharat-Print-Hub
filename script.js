@@ -1,92 +1,32 @@
-// Bharat Print Interactive Functionality & Theme Switcher Engine
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-
-    if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('show');
-        });
-
-        // Close mobile nav on link click
-        navMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('show');
-            });
-        });
-    }
-
-    // Aadhaar File Input listener
-    const aadhaarInput = document.getElementById('aadhaarInput');
-    if (aadhaarInput) {
-        aadhaarInput.addEventListener('change', handleAadhaarUpload);
-    }
-
-    // Load saved theme if available
-    const savedTheme = localStorage.getItem('bharat_print_theme');
-    if (savedTheme) {
-        setTheme(savedTheme, false);
-    }
+// Mobile Menu Toggle
+document.getElementById('menuToggle')?.addEventListener('click', () => {
+    document.getElementById('navMenu')?.classList.toggle('active');
 });
 
-// --- Theme Switcher & Auto Theme Changer Logic ---
-const themesList = ['blue', 'purple', 'emerald', 'orange', 'ruby', 'teal', 'pink', 'indigo', 'amber', 'lime', 'violet', 'coral', 'turquoise', 'slate', 'sunshine'];
-let autoThemeInterval = null;
-let isAutoThemeRunning = false;
-
-function setTheme(themeName, save = true) {
-    document.documentElement.setAttribute('data-theme', themeName);
-    if (save) {
-        localStorage.setItem('bharat_print_theme', themeName);
-    }
-
-    // Update active dot indicators
-    document.querySelectorAll('.theme-dot').forEach(dot => {
-        dot.classList.remove('active');
-        if (dot.getAttribute('onclick')?.includes(`'${themeName}'`)) {
-            dot.classList.add('active');
+// Real-time Service Search Filtering
+document.getElementById('serviceSearch')?.addEventListener('input', function(e) {
+    const term = e.target.value.toLowerCase();
+    const cards = document.querySelectorAll('.service-card');
+    
+    cards.forEach(card => {
+        const name = card.getAttribute('data-name')?.toLowerCase() || '';
+        const text = card.innerText.toLowerCase();
+        if (name.includes(term) || text.includes(term)) {
+            card.style.display = 'flex';
+        } else {
+            card.style.display = 'none';
         }
     });
-}
+});
 
-function toggleAutoTheme() {
-    const statusEl = document.getElementById('autoThemeStatus');
-    const btnEl = document.getElementById('autoThemeToggleBtn');
-
-    if (isAutoThemeRunning) {
-        clearInterval(autoThemeInterval);
-        autoThemeInterval = null;
-        isAutoThemeRunning = false;
-        statusEl.innerText = 'Auto: OFF';
-        btnEl.innerText = '▶ Start Auto';
-        btnEl.style.background = 'var(--primary)';
-    } else {
-        isAutoThemeRunning = true;
-        statusEl.innerText = 'Auto: ON (3s)';
-        btnEl.innerText = '⏸ Pause Auto';
-        btnEl.style.background = '#e11d48';
-
-        let currentIndex = themesList.indexOf(document.documentElement.getAttribute('data-theme') || 'blue');
-        
-        autoThemeInterval = setInterval(() => {
-            currentIndex = (currentIndex + 1) % themesList.length;
-            setTheme(themesList[currentIndex], false);
-        }, 3000);
-    }
-}
-
-// Quick Order Handler from Hero Section
+// Quick Order Handler from Calculator
 function handleQuickSubmit(event) {
     event.preventDefault();
     const docType = document.getElementById('docType').value;
     const copies = document.getElementById('printCopies').value;
-    const color = document.getElementById('colorOption').value;
+    const quality = document.getElementById('colorOption').value;
 
-    alert(`Quick Order Received!\nType: ${docType}\nCopies: ${copies}\nQuality: ${color}\n\nRedirecting to WhatsApp for instant verification...`);
-    
-    const message = encodeURIComponent(`Hello Bharat Print, I want to order: ${docType}, Copies: ${copies}, Quality: ${color}`);
+    const message = encodeURIComponent(`Hello Bharat Print Hub, I want to order:\nType: ${docType}\nCopies/Pages: ${copies}\nQuality/Binding: ${quality}`);
     window.open(`https://wa.me/919876543210?text=${message}`, '_blank');
 }
 

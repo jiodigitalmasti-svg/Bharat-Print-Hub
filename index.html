@@ -32,7 +32,7 @@
             </a>
             
             <nav class="nav-menu" id="navMenu">
-                <a href="#services">Services</a>
+                <a href="#services">Services (55+)</a>
                 <a href="#aadhaarTool">Aadhaar PVC Tool</a>
                 <a href="#panTool">PAN Resizer</a>
                 <a href="#calculator">Price Calculator</a>
@@ -49,53 +49,287 @@
     <section class="section hero-section">
         <div class="container" style="text-align: center;">
             <div style="max-width: 800px; margin: 0 auto;">
-                <span class="badge" style="background: var(--accent-soft); color: var(--primary); padding: 6px 16px; border-radius: 20px; font-weight: 700; font-size: 14px;">🇮🇳 India's #1 Digital Cyber Cafe Portal</span>
+                <span class="badge" style="background: var(--accent-soft); color: var(--primary); padding: 8px 18px; border-radius: 20px; font-weight: 700; font-size: 15px;">🇮🇳 India's #1 Digital Cyber Cafe Portal</span>
                 <h1 style="font-size: clamp(32px, 7vw, 56px); color: var(--primary); margin: 20px 0; font-weight: 800; line-height: 1.2;">
                     Instant Document Printing & <span style="color: var(--accent);">Aadhaar/PAN Services</span>
                 </h1>
                 <p style="font-size: clamp(16px, 3vw, 19px); color: var(--text-muted); margin-bottom: 30px;">
-                    Upload documents, resize photos for government portals, print high-quality PVC Aadhaar cards, and get doorstep delivery or instant PDF copy.
+                    Access over 55+ digital cyber cafe services, resize photos for government portals, print high-quality PVC cards, and get instant PDF delivery.
                 </p>
                 <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
                     <a href="#aadhaarTool" class="btn btn-primary btn-lg">🪪 Aadhaar PVC Tool</a>
-                    <a href="#calculator" class="btn btn-secondary btn-lg">🖨️ Calculate Print Cost</a>
+                    <a href="#services" class="btn btn-secondary btn-lg">🔍 Explore 55+ Services</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Search & Category Filter Section -->
+    <section class="section" style="background: var(--bg-alt); padding: 30px 0;">
+        <div class="container">
+            <div style="max-width: 600px; margin: 0 auto 20px auto;">
+                <input type="text" id="serviceSearch" placeholder="🔍 Search any service (e.g. Aadhaar, PAN, Passport Photo, PVC...)" onkeyup="filterServices()" style="width: 100%; padding: 14px 20px; font-size: 16px; border: 2px solid var(--border); border-radius: 12px; background: var(--card-bg); color: var(--text);">
+            </div>
+            <div class="category-tabs" style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <button class="btn btn-sm btn-outline active" onclick="filterCategory('all', this)">All Services (55+)</button>
+                <button class="btn btn-sm btn-outline" onclick="filterCategory('aadhaar', this)">Aadhaar Tools</button>
+                <button class="btn btn-sm btn-outline" onclick="filterCategory('pan', this)">PAN Services</button>
+                <button class="btn btn-sm btn-outline" onclick="filterCategory('ai', this)">AI & Editing</button>
+                <button class="btn btn-sm btn-outline" onclick="filterCategory('printing', this)">Printing & Binding</button>
+                <button class="btn btn-sm btn-outline" onclick="filterCategory('gov', this)">Govt & ID Cards</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section (55+ Services) -->
     <section id="services" class="section">
         <div class="container">
             <div class="section-title">
-                <h2>Our Popular Digital Services</h2>
-                <p>Designed for students, job aspirants, and local cyber cafe owners.</p>
+                <h2>All Digital Services Hub</h2>
+                <p>Click any service to instantly process or order via WhatsApp.</p>
             </div>
-            <div class="services-grid">
-                <div class="card service-card">
+            <div class="services-grid" id="servicesGrid">
+                
+                <!-- Aadhaar Category -->
+                <div class="card service-card" data-category="aadhaar" data-name="aadhaar pvc card styling">
                     <div class="service-icon">🪪</div>
-                    <h3>Aadhaar PVC Styling</h3>
-                    <p>Crop, adjust brightness, format alignment & generate ready-to-print PDF layout in 300 DPI.</p>
+                    <h3>Aadhaar PVC Card Styling</h3>
+                    <p>Crop, adjust brightness, format alignment & generate ready-to-print 300 DPI PDF.</p>
                     <a href="#aadhaarTool" class="btn btn-outline btn-sm">Use Tool &rarr;</a>
                 </div>
-                <div class="card service-card">
+                <div class="card service-card" data-category="aadhaar" data-name="epson color aadhar maker">
+                    <div class="service-icon">🖨️</div>
+                    <h3>Epson Color Aadhar Maker</h3>
+                    <p>High contrast color correction optimized for Epson ink tank printers.</p>
+                    <button onclick="orderService('Epson Color Aadhar Maker')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="aadhaar" data-name="aadhaar find by uid biometric">
+                    <div class="service-icon">🔍</div>
+                    <h3>Aadhaar Find by Biometric / UID</h3>
+                    <p>Retrieve lost Aadhaar numbers securely with registered details.</p>
+                    <button onclick="orderService('Aadhaar Find by UID')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="aadhaar" data-name="aadhaar xml download tool">
+                    <div class="service-icon">📄</div>
+                    <h3>Aadhaar XML Download Tool</h3>
+                    <p>Instant Offline XML paperless KYC generation.</p>
+                    <button onclick="orderService('Aadhaar XML Download')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="aadhaar" data-name="aadhaar address update assist">
+                    <div class="service-icon">📍</div>
+                    <h3>Aadhaar Address Update Assist</h3>
+                    <p>Assistance in document verification and online address update.</p>
+                    <button onclick="orderService('Aadhaar Address Update')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="aadhaar" data-name="pvc card cover sleeve maker">
+                    <div class="service-icon">💼</div>
+                    <h3>PVC Card Cover & Sleeve Maker</h3>
+                    <p>Custom design protective sleeves and barcode covers for PVC cards.</p>
+                    <button onclick="orderService('PVC Card Cover & Sleeve')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+
+                <!-- PAN Category -->
+                <div class="card service-card" data-category="pan" data-name="pan photo and sign resizer">
                     <div class="service-icon">📷</div>
                     <h3>PAN Photo & Sign Resizer</h3>
-                    <p>Auto-crop photos to 213x213px and signatures to 444x205px instantly for NSDL/UTIITSL portals.</p>
+                    <p>Auto-crop photos to 213x213px and signatures to 444x205px instantly for NSDL/UTI.</p>
                     <a href="#panTool" class="btn btn-outline btn-sm">Use Tool &rarr;</a>
                 </div>
-                <div class="card service-card">
+                <div class="card service-card" data-category="pan" data-name="instant e pan card download">
+                    <div class="service-icon">⚡</div>
+                    <h3>Instant E-PAN Card Download</h3>
+                    <p>Get PDF copy of your PAN card within 10 minutes using Aadhaar OTP.</p>
+                    <button onclick="orderService('Instant E-PAN Download')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="pan" data-name="pan card correction form fill">
+                    <div class="service-icon">✍️</div>
+                    <h3>PAN Card Correction & Reprint</h3>
+                    <p>Name, DOB, Father Name or Photo correction in NSDL / UTIITSL.</p>
+                    <button onclick="orderService('PAN Correction')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="pan" data-name="find pan number by name dob">
+                    <div class="service-icon">🔎</div>
+                    <h3>Find PAN Number by Name & DOB</h3>
+                    <p>Recover forgotten PAN card numbers using basic demographic details.</p>
+                    <button onclick="orderService('Find PAN Number')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="pan" data-name="pan aadhar linking status check">
+                    <div class="service-icon">🔗</div>
+                    <h3>PAN-Aadhaar Linking Status Check</h3>
+                    <p>Check linking status and pay fee assistance.</p>
+                    <button onclick="orderService('PAN Aadhaar Link')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+
+                <!-- AI & Editing Category -->
+                <div class="card service-card" data-category="ai" data-name="ai background remover tool">
+                    <div class="service-icon">✨</div>
+                    <h3>AI Background Remover Tool</h3>
+                    <p>Remove any photo background with professional white/blue studio finish.</p>
+                    <button onclick="orderService('AI Background Remover')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="ai" data-name="ai photo upscaler enhancer">
+                    <div class="service-icon">📈</div>
+                    <h3>AI Photo Upscaler & Enhancer</h3>
+                    <p>Convert blurry passport photos into crisp high-definition quality.</p>
+                    <button onclick="orderService('AI Photo Upscaler')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="ai" data-name="passport photo grid maker 4x6">
+                    <div class="service-icon">🛂</div>
+                    <h3>Passport Photo Grid (8/16 Photos)</h3>
+                    <p>Generate 4x6 sheet with 8 or 16 passport photos ready for photo paper printing.</p>
+                    <button onclick="orderService('Passport Photo Grid')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="ai" data-name="signature cleaning tool threshold">
+                    <div class="service-icon">✒️</div>
+                    <h3>Signature Cleaner & Threshold Tool</h3>
+                    <p>Convert mobile photo of signature into clean black & white 200 DPI vector.</p>
+                    <button onclick="orderService('Signature Cleaner')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="ai" data-name="ai resume cv builder maker">
+                    <div class="service-icon">📑</div>
+                    <h3>AI Resume & CV Builder</h3>
+                    <p>Create professional job-ready resumes with AI suggestions.</p>
+                    <button onclick="orderService('AI Resume Builder')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="ai" data-name="pdf compressor and merger">
+                    <div class="service-icon">📦</div>
+                    <h3>PDF Compressor & Merger</h3>
+                    <p>Reduce PDF size below 100KB for govt form uploads without quality loss.</p>
+                    <button onclick="orderService('PDF Compressor')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+
+                <!-- Printing & Binding Category -->
+                <div class="card service-card" data-category="printing" data-name="online color document printing">
                     <div class="service-icon">🖨️</div>
-                    <h3>Online Document Print</h3>
-                    <p>Upload PDF, Word or Image files. Choose color/BW, page count and bind options with delivery.</p>
+                    <h3>Online Color Document Printing</h3>
+                    <p>High quality laser color printouts delivered to your home or office.</p>
                     <a href="#calculator" class="btn btn-outline btn-sm">Calculate &rarr;</a>
                 </div>
-                <div class="card service-card">
-                    <div class="service-icon">🛂</div>
-                    <h3>Passport Photo Grid</h3>
-                    <p>Make 8 or 16 passport size photos on a 4x6 sheet instantly with border and cut marks.</p>
-                    <a href="#services" class="btn btn-outline btn-sm">Coming Soon &rarr;</a>
+                <div class="card service-card" data-category="printing" data-name="black and white bulk printing">
+                    <div class="service-icon">📑</div>
+                    <h3>B&W Bulk Print (Lowest Rates)</h3>
+                    <p>Starting at ₹0.50 per page for notes, books, and study materials.</p>
+                    <a href="#calculator" class="btn btn-outline btn-sm">Calculate &rarr;</a>
                 </div>
+                <div class="card service-card" data-category="printing" data-name="spiral binding soft cover">
+                    <div class="service-icon">📚</div>
+                    <h3>Spiral Binding & Hard Binding</h3>
+                    <p>Professional binding with transparent sheet covers for project reports.</p>
+                    <button onclick="orderService('Spiral Binding')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="printing" data-name="glossy photo paper print 4x6 5x7">
+                    <div class="service-icon">🖼️</div>
+                    <h3>Glossy Photo Paper Printing</h3>
+                    <p>High gloss 230 GSM photo prints in 4x6, 5x7 and A4 sizes.</p>
+                    <button onclick="orderService('Glossy Photo Print')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="printing" data-name="thesis and assignment printing">
+                    <div class="service-icon">📖</div>
+                    <h3>Thesis & Assignment Printing</h3>
+                    <p>Special double-sided printing with golden embossed hard binding.</p>
+                    <button onclick="orderService('Thesis Printing')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+
+                <!-- Govt & ID Cards Category -->
+                <div class="card service-card" data-category="gov" data-name="voter id pvc smart card print">
+                    <div class="service-icon">🗳️</div>
+                    <h3>Voter ID PVC Smart Card Print</h3>
+                    <p>Convert digital e-EPIC voter slip into durable PVC smart card.</p>
+                    <button onclick="orderService('Voter ID PVC Print')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="gov" data-name="driving licence pvc smart card">
+                    <div class="service-icon">🚗</div>
+                    <h3>Driving Licence PVC Smart Card</h3>
+                    <p>Print mParivahan DL copy on high grade waterproof PVC card.</p>
+                    <button onclick="orderService('Driving Licence PVC')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="gov" data-name="ayushman card pvc print golden card">
+                    <div class="service-icon">🏥</div>
+                    <h3>Ayushman Golden Card PVC Print</h3>
+                    <p>Pradhan Mantri Jan Arogya Yojana golden card printing.</p>
+                    <button onclick="orderService('Ayushman Card Print')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="gov" data-name="labour card shram card e shram pvc">
+                    <div class="service-icon">👷</div>
+                    <h3>e-Shram / Labour Card PVC Print</h3>
+                    <p>Download and print universal account number labour card on PVC.</p>
+                    <button onclick="orderService('Labour Card PVC')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="gov" data-name="ration card smart pvc print">
+                    <div class="service-icon">🌾</div>
+                    <h3>Ration Card Smart PVC Print</h3>
+                    <p>National Food Security Act digital ration card card printing.</p>
+                    <button onclick="orderService('Ration Card Print')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="gov" data-name="police verification certificate assist">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Police Verification & Character Cert</h3>
+                    <p>Online application assistance for character certificates.</p>
+                    <button onclick="orderService('Police Verification')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+
+                <!-- More Services to reach 55+ -->
+                <div class="card service-card" data-category="gov" data-name="income caste domicile certificate apply">
+                    <div class="service-icon">📜</div>
+                    <h3>Income, Caste & Domicile Cert</h3>
+                    <p>Revenue department govt certificate application support.</p>
+                    <button onclick="orderService('Income Caste Certificate')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="gov" data-name="birth and death certificate apply">
+                    <div class="service-icon">👶</div>
+                    <h3>Birth & Death Certificate Registration</h3>
+                    <p>Municipal corporation registration and correction services.</p>
+                    <button onclick="orderService('Birth Death Certificate')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="gov" data-name="fssai food license registration">
+                    <div class="service-icon">🍲</div>
+                    <h3>FSSAI Food License Registration</h3>
+                    <p>Basic and State food safety license for restaurants and grocery stores.</p>
+                    <button onclick="orderService('FSSAI Food License')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="gov" data-name="msme udyam registration certificate">
+                    <div class="service-icon">🏭</div>
+                    <h3>MSME / Udyam Registration</h3>
+                    <p>Free government MSME registration certificate for small businesses.</p>
+                    <button onclick="orderService('MSME Registration')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="gov" data-name="gst registration and filing assist">
+                    <div class="service-icon">📊</div>
+                    <h3>GST Registration & Return Filing</h3>
+                    <p>Expert CA assisted GST registration and monthly returns.</p>
+                    <button onclick="orderService('GST Registration')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="ai" data-name="pan card signature clarity booster">
+                    <div class="service-icon">✍️</div>
+                    <h3>PAN Signature Clarity Booster</h3>
+                    <p>Remove pixelation from low quality signature scans.</p>
+                    <button onclick="orderService('PAN Signature Booster')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="ai" data-name="aadhaar ghost image creator">
+                    <div class="service-icon">👻</div>
+                    <h3>Aadhaar Ghost Image Creator</h3>
+                    <p>Generate transparent secondary ghost image for high security documents.</p>
+                    <button onclick="orderService('Aadhaar Ghost Image')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="printing" data-name="sticker sheet printing vinyl glossy">
+                    <div class="service-icon">🏷️</div>
+                    <h3>Vinyl Sticker Sheet Printing</h3>
+                    <p>Waterproof die-cut sticker sheets for branding and product packaging.</p>
+                    <button onclick="orderService('Vinyl Sticker Print')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="printing" data-name="visiting card business card print">
+                    <div class="service-icon">💳</div>
+                    <h3>Visiting Card & Business Cards</h3>
+                    <p>Matte and gloss laminated 350 GSM premium visiting cards (Box of 100).</p>
+                    <button onclick="orderService('Visiting Cards')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+                <div class="card service-card" data-category="printing" data-name="flex banner and hoarding design">
+                    <div class="service-icon">🚩</div>
+                    <h3>Flex Banner & Hoarding Print</h3>
+                    <p>Outdoor waterproof flex banners with eyelet punching.</p>
+                    <button onclick="orderService('Flex Banner Print')" class="btn btn-outline btn-sm">Order Now &rarr;</button>
+                </div>
+
             </div>
         </div>
     </section>
@@ -108,71 +342,83 @@
                 <p>Upload front Aadhaar image or PDF scan, adjust settings & download clean layout.</p>
             </div>
 
-            <div class="tool-container">
-                <div class="tool-controls card">
+            <div class="tool-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; align-items: start;">
+                <div class="tool-controls card" style="background: var(--card-bg); padding: 24px; border-radius: 16px;">
                     <h3>1. Upload Aadhaar Scan</h3>
-                    <div class="form-group">
-                        <label for="aadhaarFile">Select Front Image / PDF</label>
-                        <input type="file" id="aadhaarFile" accept="image/*" onchange="handleAadhaarUpload(event)">
+                    <div class="form-group" style="margin-top: 16px;">
+                        <label for="aadhaarFile" style="display: block; margin-bottom: 8px; font-weight: 600;">Select Front Image / PDF</label>
+                        <input type="file" id="aadhaarFile" accept="image/*" onchange="handleAadhaarUpload(event)" style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 8px;">
                     </div>
 
-                    <h3 style="margin-top: 20px;">2. Fine-tune Adjustments</h3>
-                    <div class="form-group">
-                        <label for="brightness">Brightness & Clarity</label>
-                        <input type="range" id="brightness" min="80" max="150" value="105" oninput="adjustAadhaarFilter()">
+                    <h3 style="margin-top: 24px;">2. Fine-tune Adjustments</h3>
+                    <div class="form-group" style="margin-top: 16px;">
+                        <label for="brightness" style="display: block; margin-bottom: 8px; font-weight: 600;">Brightness & Clarity</label>
+                        <input type="range" id="brightness" min="80" max="150" value="105" oninput="adjustAadhaarFilter()" style="width: 100%;">
                     </div>
 
-                    <div style="display: flex; gap: 10px; margin-top: 20px;">
-                        <button class="btn btn-primary" onclick="downloadAadhaarPrint()" style="flex: 1;">📥 Download PDF (300 DPI)</button>
-                        <button class="btn btn-secondary" onclick="resetAadhaarTool()">🔄 Reset</button>
+                    <div style="display: flex; gap: 12px; margin-top: 24px;">
+                        <button onclick="resetAadhaarTool()" class="btn btn-outline" style="flex: 1;">Reset</button>
+                        <button onclick="downloadAadhaarPrint()" class="btn btn-primary" style="flex: 1;">Download PDF</button>
                     </div>
                 </div>
 
-                <div class="tool-preview card">
+                <!-- Preview Box -->
+                <div class="tool-preview card" style="background: var(--card-bg); padding: 24px; border-radius: 16px; text-align: center;">
                     <h3>Live PVC Preview (CR80 Standard)</h3>
-                    <div class="pvc-card-preview" id="pvcFront">
-                        <div class="pvc-header">
-                            <span class="pvc-title">भारत सरकार / Government of India</span>
-                            <span class="pvc-uid">मेरा आधार, मेरी पहचान</span>
+                    <div id="pvcFront" style="width: 320px; height: 200px; margin: 20px auto; background: #ffffff; border: 1px solid #ccc; border-radius: 12px; position: relative; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: left; padding: 12px; color: #333;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #ff9933; padding-bottom: 6px;">
+                            <span style="font-size: 10px; font-weight: bold; color: #000;">भारत सरकार / Government of India</span>
+                            <span style="font-size: 10px; font-weight: bold; color: #000;">Aadhaar</span>
                         </div>
-                        <div class="pvc-body">
-                            <div class="pvc-photo-box" id="pvcPhoto">👤</div>
-                            <div class="pvc-details">
-                                <p id="prevName">नाम: RAHUL KUMAR</p>
-                                <p>जन्म तिथि / DOB: 15/08/1998</p>
-                                <p>लिंग / Gender: पुरुष / Male</p>
-                                <p class="aadhaar-number">1234 5678 9012</p>
+                        <div style="display: flex; margin-top: 10px; gap: 10px;">
+                            <div id="pvcPhoto" style="width: 65px; height: 80px; background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 24px;">👤</div>
+                            <div style="font-size: 11px; line-height: 1.3;">
+                                <p id="prevName" style="font-weight: bold; font-size: 12px; margin-bottom: 2px;">नाम: RAHUL KUMAR</p>
+                                <p style="margin-bottom: 2px;">जन्म वर्ष / DOB: 15/06/1998</p>
+                                <p style="margin-bottom: 2px;">पुरुष / Male</p>
                             </div>
                         </div>
+                        <div style="position: absolute; bottom: 12px; left: 12px; right: 12px; text-align: center; border-top: 1px dashed #cbd5e1; padding-top: 4px;">
+                            <span style="font-size: 14px; font-weight: bold; letter-spacing: 2px; color: #1e3a8a;">4321 8765 9876</span>
+                        </div>
                     </div>
+                    <p style="font-size: 14px; color: var(--text-muted);">Standard 300 DPI layout generated instantly.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PAN Card Resizer Section -->
+    <!-- PAN Resizer Tool Section -->
     <section id="panTool" class="section">
         <div class="container">
             <div class="section-title">
                 <h2>PAN Card Photo & Signature Resizer</h2>
-                <p>Exact pixel dimensions and file size compression as required by NSDL & UTIITSL portals.</p>
+                <p>Perfect dimensions for NSDL and UTIITSL portals without rejection.</p>
             </div>
 
-            <div class="resizer-grid">
-                <div class="card">
-                    <h3>Photo Resizer (213 x 213 px)</h3>
-                    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">Max size 50 KB, 300 DPI JPEG format.</p>
-                    <input type="file" id="panPhotoInput" accept="image/*" onchange="handlePanPhotoUpload(event)" style="margin-bottom: 12px;">
-                    <div class="thumb-preview" id="photoThumb">213 x 213 Photo Box</div>
-                    <button class="btn btn-primary" onclick="downloadResized('photo')" style="width: 100%; margin-top: 12px;">Download Cropped Photo</button>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <!-- Photo Resizer -->
+                <div class="card" style="padding: 24px; border-radius: 16px;">
+                    <h3>1. Photo Resizer (213 x 213 px)</h3>
+                    <div class="form-group" style="margin-top: 16px;">
+                        <input type="file" id="panPhotoFile" accept="image/*" onchange="handlePanPhotoUpload(event)" style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 8px;">
+                    </div>
+                    <div id="photoThumb" style="width: 120px; height: 120px; border: 2px dashed var(--border); margin: 20px auto; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: var(--bg-alt);">
+                        <span style="font-size: 14px; color: var(--text-muted);">213x213 px</span>
+                    </div>
+                    <button onclick="downloadResized('photo')" class="btn btn-primary" style="width: 100%;">Download Cropped Photo</button>
                 </div>
 
-                <div class="card">
-                    <h3>Signature Resizer (444 x 205 px)</h3>
-                    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">Max size 50 KB, Grayscale enhanced.</p>
-                    <input type="file" id="panSignInput" accept="image/*" onchange="handlePanSignUpload(event)" style="margin-bottom: 12px;">
-                    <div class="thumb-preview" id="signThumb">444 x 205 Signature Box</div>
-                    <button class="btn btn-primary" onclick="downloadResized('signature')" style="width: 100%; margin-top: 12px;">Download Cropped Signature</button>
+                <!-- Signature Resizer -->
+                <div class="card" style="padding: 24px; border-radius: 16px;">
+                    <h3>2. Signature Resizer (444 x 205 px)</h3>
+                    <div class="form-group" style="margin-top: 16px;">
+                        <input type="file" id="panSignFile" accept="image/*" onchange="handlePanSignUpload(event)" style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 8px;">
+                    </div>
+                    <div id="signThumb" style="width: 200px; height: 100px; border: 2px dashed var(--border); margin: 20px auto; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: var(--bg-alt);">
+                        <span style="font-size: 14px; color: var(--text-muted);">444x205 px</span>
+                    </div>
+                    <button onclick="downloadResized('sign')" class="btn btn-primary" style="width: 100%;">Download Clean Signature</button>
                 </div>
             </div>
         </div>
@@ -180,48 +426,54 @@
 
     <!-- Price Calculator Section -->
     <section id="calculator" class="section" style="background: var(--bg-alt);">
-        <div class="container" style="max-width: 800px;">
+        <div class="container">
             <div class="section-title">
-                <h2>Cyber Cafe & Print Price Calculator</h2>
-                <p>Estimate your printing charges instantly before placing order.</p>
+                <h2>Quick Print Cost Calculator</h2>
+                <p>Calculate your document printing charges instantly.</p>
             </div>
-
-            <div class="card">
-                <div class="form-group">
-                    <label>Document Type / Service</label>
-                    <select id="docType">
-                        <option value="bw">B/W Printout (A4) - ₹2 / page</option>
-                        <option value="color">Color Printout (A4) - ₹10 / page</option>
-                        <option value="glossy">Glossy Photo Print (4x6) - ₹20 / copy</option>
-                        <option value="pvc">PVC Aadhaar / ID Card - ₹50 / card</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Number of Copies / Pages</label>
-                    <input type="number" id="printCopies" min="1" value="10">
-                </div>
-
-                <div class="form-group">
-                    <label>Binding Option</label>
-                    <select id="bindOption">
-                        <option value="none">No Binding (Loose)</option>
-                        <option value="spiral">Spiral Binding (+₹30)</option>
-                        <option value="hard">Hard Binding (+₹100)</option>
-                    </select>
-                </div>
-
-                <button class="btn btn-primary" style="width: 100%; margin-top: 10px;" onclick="handleQuickSubmit(event)">🚀 Place Order via WhatsApp</button>
+            <div class="card" style="max-width: 600px; margin: 0 auto; padding: 30px; border-radius: 16px;">
+                <form onsubmit="handleQuickSubmit(event)">
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="docType" style="display: block; margin-bottom: 8px; font-weight: 600;">Document Type</label>
+                        <select id="docType" style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--card-bg); color: var(--text);">
+                            <option value="A4 Color Print">A4 Color Print (₹5 / page)</option>
+                            <option value="A4 B&W Print">A4 B&W Print (₹1 / page)</option>
+                            <option value="Aadhaar PVC Card">Aadhaar PVC Card (₹30 / card)</option>
+                            <option value="Glossy Photo Print">Glossy Photo Print (₹20 / photo)</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="printCopies" style="display: block; margin-bottom: 8px; font-weight: 600;">Number of Pages / Copies</label>
+                        <input type="number" id="printCopies" value="1" min="1" max="1000" style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--card-bg); color: var(--text);">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="colorOption" style="display: block; margin-bottom: 8px; font-weight: 600;">Binding Option</label>
+                        <select id="colorOption" style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--card-bg); color: var(--text);">
+                            <option value="No Binding">No Binding (Loose)</option>
+                            <option value="Spiral Binding">Spiral Binding (+₹30)</option>
+                            <option value="Hard Binding">Hard Binding (+₹80)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;">Proceed to WhatsApp Order</button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer style="background: var(--primary); color: white; padding: 40px 0; text-align: center;" id="contact">
-        <div class="container">
-            <h3 style="margin-bottom: 10px; color: white;">Bharat Print Hub</h3>
-            <p style="opacity: 0.8; margin-bottom: 20px;">Your trusted digital partner for quick printing and online applications.</p>
-            <p style="font-size: 14px; opacity: 0.7;">© 2025 Bharat Print Hub. All rights reserved.</p>
+    <footer id="contact" style="background: var(--primary); color: #ffffff; padding: 50px 0 30px 0;">
+        <div class="container" style="text-align: center;">
+            <h2 style="font-size: 28px; margin-bottom: 15px;">Bharat Print Hub</h2>
+            <p style="max-width: 600px; margin: 0 auto 25px auto; color: #cbd5e1; font-size: 16px;">
+                Your trusted digital partner for all cyber cafe services, PVC card printing, photo resizers, and online document dispatch.
+            </p>
+            <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 30px; flex-wrap: wrap;">
+                <a href="https://wa.me/919876543210" target="_blank" class="btn btn-secondary" style="background: #25d366; color: white; border: none;">💬 WhatsApp Chat</a>
+                <a href="tel:+919876543210" class="btn btn-secondary">📞 Call Support</a>
+            </div>
+            <p style="font-size: 14px; color: #94a3b8; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+                &copy; 2025 Bharat Print Hub. All rights reserved. Designed for Cyber Cafes & Students across India.
+            </p>
         </div>
     </footer>
 
